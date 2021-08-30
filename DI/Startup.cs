@@ -32,6 +32,11 @@ namespace DI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DI", Version = "v1" });
             });
+            services.AddTransient<ICounter, Counter>();
+            //services.AddScoped<ICounter, Counter>();
+            //services.AddSingleton<ICounter, Counter>();
+            services.AddTransient<IFirstCounter, FirstCounter>();
+            services.AddTransient<ISecondCounter, SecondCounter>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
